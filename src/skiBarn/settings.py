@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'rentals',
         'USER': 'root',
-        'PASSWORD': 'lforte',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'password',
+        'HOST': 'ip_address',
         'PORT': '3306',
         'OPTIONS': {
             'autocommit': True,
