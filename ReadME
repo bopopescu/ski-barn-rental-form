@@ -1,0 +1,13 @@
+This project is intended to function as a data collection system for ski and snowboard rentals.
+It is still in early development. it should function fully, but has yet to be designed, and is constantly gaining new features.
+
+
+To use this app you must first set up your mysql database, and the settings of this app, src/skiBarn/settings.py ,  
+specifically the database settings on line 79 - 90.
+
+Then open the terminal and navigate to env/Scripts/activate.
+ie. env/Scripts/activate
+
+After that, navigate to src using manage.py, in the terminal, and launch the server with  py manage.py runserver
+
+Once you complete these steps, you should be able to navigate to the site on localhost:8000 in your web browser.
