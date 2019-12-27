@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'login/login.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Log in</h1>
+        <form method="POST" id="form">
+            <p id="reset">Reset your password <a href="/rentals/reset/" style="text-decoration: underline;">here</a>.</p>
+            <p id="error">{{logerr|default:""}}</p>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

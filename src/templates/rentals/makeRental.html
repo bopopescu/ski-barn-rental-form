@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'rentals/makeRental.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="renterSelect">
+            <h1>Select a renter that you would like to rent for.</h1>
+            <div>
+                {% if acc_info == None %}
+                    <h1>Please Create a renter in <a href="/rentals/{{account_id}}/renters/">step 2</a>.</h1>
+                {% endif %}
+                {% for renter in acc_info %}
+                    <div class="renter" onclick="selectRenter('{{renter.renter_id}}')">
+                        <h1>{{renter.full_name}}</h1>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="renterDesc">
+            <label for="height">Height in inches:</label>
+            <select name="height" type="number" placeholder="Height(in.)" id="height">
+                <option value="24">24 in. (2 ft.)</option>
+                <option value="25">25 in. (2 ft. 1 in.)</option>
+                <option value="26">26 in. (2 ft. 2 in.)</option>
+                <option value="27">27 in. (2 ft. 3 in.)</option>
+                <option value="28">28 in. (2 ft. 4 in.)</option>
+                <option value="29">29 in. (2 ft. 5 in.)</option>
+                <option value="30">30 in. (2 ft. 6 in.)</option>
+                <option value="31">31 in. (2 ft. 7 in.)</option>
+                <option value="32">32 in. (2 ft. 8 in.)</option>
+                <option value="33">33 in. (2 ft. 9 in.)</option>
+                <option value="34">34 in. (2 ft. 10 in.)</option>
+                <option value="35">35 in. (2 ft. 11 in.)</option>
+                <option value="36">36 in. (3 ft.)</option>
+                <option value="37">37 in. (3 ft. 1 in.)</option>
+                <option value="38">38 in. (3 ft. 2 in.)</option>
+                <option value="39">39 in. (3 ft. 3 in.)</option>
+                <option value="40">40 in. (3 ft. 4 in.)</option>
+                <option value="41">41 in. (3 ft. 5 in.)</option>
+                <option value="42">42 in. (3 ft. 6 in.)</option>
+                <option value="43">43 in. (3 ft. 7 in.)</option>
+                <option value="44">44 in. (3 ft. 8 in.)</option>
+                <option value="45">45 in. (3 ft. 9 in.)</option>
+                <option value="46">46 in. (3 ft. 10 in.)</option>
+                <option value="47">47 in. (3 ft. 11 in.)</option>
+                <option value="48">48 in. (4 ft.)</option>
+                <option value="49">49 in. (4 ft. 1 in.)</option>
+                <option value="50">50 in. (4 ft. 2 in.)</option>
+                <option value="51">51 in. (4 ft. 3 in.)</option>
+                <option value="52">52 in. (4 ft. 4 in.)</option>
+                <option value="53">53 in. (4 ft. 5 in.)</option>
+                <option value="54">54 in. (4 ft. 6 in.)</option>
+                <option value="55">55 in. (4 ft. 7 in.)</option>
+                <option value="56">56 in. (4 ft. 8 in.)</option>
+                <option value="57">57 in. (4 ft. 9 in.)</option>
+                <option value="58">58 in. (4 ft. 10 in.)</option>
+                <option value="59">59 in. (4 ft. 11 in.)</option>
+                <option value="60">60 in. (5 ft.)</option>
+                <option value="61">61 in. (5 ft. 1 in.)</option>
+                <option value="62">62 in. (5 ft. 2 in.)</option>
+                <option value="63">63 in. (5 ft. 3 in.)</option>
+                <option value="64">64 in. (5 ft. 4 in.)</option>
+                <option value="65">65 in. (5 ft. 5 in.)</option>
+                <option value="66">66 in. (5 ft. 6 in.)</option>
+                <option value="67">67 in. (5 ft. 7 in.)</option>
+                <option value="68">68 in. (5 ft. 8 in.)</option>
+                <option value="69">69 in. (5 ft. 9 in.)</option>
+                <option value="70">70 in. (5 ft. 10 in.)</option>
+                <option value="71">71 in. (5 ft. 11 in.)</option>
+                <option value="72">72 in. (6 ft.)</option>
+                <option value="73">73 in. (6 ft. 1 in.)</option>
+                <option value="74">74 in. (6 ft. 2 in.)</option>
+                <option value="75">75 in. (6 ft. 3 in.)</option>
+                <option value="76">76 in. (6 ft. 4 in.)</option>
+                <option value="77">77 in. (6 ft. 5 in.)</option>
+                <option value="78">78 in. (6 ft. 6 in.)</option>
+                <option value="79">79 in. (6 ft. 7 in.)</option>
+                <option value="80">80 in. (6 ft. 8 in.)</option>
+                <option value="81">81 in. (6 ft. 9 in.)</option>
+                <option value="82">82 in. (6 ft. 10 in.)</option>
+                <option value="83">83 in. (6 ft. 11 in.)</option>
+                <option value="84">84 in. (7 ft.)</option>
+                <option value="85">85 in. (7 ft. 1 in.)</option>
+                <option value="86">86 in. (7 ft. 2 in.)</option>
+                <option value="87">87 in. (7 ft. 3 in.)</option>
+                <option value="88">88 in. (7 ft. 4 in.)</option>
+                <option value="89">89 in. (7 ft. 5 in.)</option>
+                <option value="90">90 in. (7 ft. 6 in.)</option>
+                <option value="91">91 in. (7 ft. 7 in.)</option>
+                <option value="92">92 in. (7 ft. 8 in.)</option>
+                <option value="93">93 in. (7 ft. 9 in.)</option>
+                <option value="94">94 in. (7 ft. 10 in.)</option>
+                <option value="95">95 in. (7 ft. 11 in.)</option>
+                <option value="96">96 in. (8 ft.)</option>
+            </select> 
+            <label for="weight">Weight in pounds (do not include lbs label):</label>
+            <input type="number" name="weight" id="weight" placeholder="Weight(lbs.)">
+            <button onclick="Next()">Next</button>
+        </div>
+        <div id="using">
+            <div id="ski" onclick="use('1')">
+                <h1>Skiing?</h1>
+                <h3>Click Here!</h3>
+            </div>
+            <div id="snowboard" onclick="use('2')">
+                <h1>Snowboarding?</h1>
+                <h3>Click Here!</h3>
+            </div>
+        </div>
+        <div id="skiStance">
+            <h2>Please select a ski type based on the renters ability level.</h2>
+            <div id="type1" onclick="type(1)">
+                <h1>Type 1</h1>
+                <p>Type 1 riders generally prefer slower speeds on gentle slopes, due to the fact that they opt to set the binding so that it will release easier in slower speed falls. Oriented towards a beginner rider.</p>
+            </div>
+            <div id="type2" onclick="type(2)">
+                <h1>Type 2</h1>
+                <p>Type 2 is the average for people who cannot identify as a type 1 or a type 3. Basically, type 2 is build to provide an average retention to release ratio for a variety of speeds and varied terrain.</p>
+            </div>
+            <div id="type3" onclick="type(3)">
+                <h1>Type 3</h1>
+                <p>Type 3 riders are the agressive riders that would rather their binding to release less often to allow for less risk of inadvertent binding release in high speed/high stress situations.</p>
+            </div>
+        </div>
+        <div id="boardStance">
+            <h1>Select the prefered stance of the renter.</h1>
+            <div id="goofy" onclick="stance('g')">
+                <h1>Goofy</h1>
+                <p>Right foot forward on the snowboard.</p>
+            </div>
+            <div id="regular" onclick="stance('r')">
+                <h1>Regular</h1>
+                <p>Left foot forward on the snowboard.</p>
+            </div>
+        </div>
+        <form method="post" id="form">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <script src="{% static 'rentals/makerentals.js'%}"></script>
+</body>
+</html>

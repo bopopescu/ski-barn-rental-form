@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'signup/signup.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Sign Up</h1>
+        <div id="accountInfo" class="slides">
+            <div id="coreInfo">
+                <p>Enter your Email address and desired password.</p>
+                <p>Reset your password <a href="/rentals/reset/" style="text-decoration: underline;">here</a>.</p>
+                <p id="passErr">Error! Your passwords didn't seem to match!</p>
+                <p id="noPassErr">Error! Please enter a password.</p>
+                <p id="noEmailErr">Error! Please enter a valid email.</p>
+                <p id="signerr">{{signerr}}</p>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="passwordConf" placeholder="Password Confirmation" required>
+            </div>
+            <button id="nextSlide" onclick="submit()">Submit</button>
+        </div>
+        <form method="POST" id="form">
+            {% csrf_token %}
+            {{ form }}
+        </form>
+    </main>
+</body>
+<script src="{% static 'signup/signup.js'%}" onload="init()"></script>
+</html>

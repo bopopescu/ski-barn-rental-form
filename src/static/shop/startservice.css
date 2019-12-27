@@ -1,0 +1,15 @@
+#selector{
+    margin: 15vh auto;
+    width: 100vw;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+}
+#selector > a{
+    margin: 10px;
+    text-align: center;
+}
+div > h1{
+    margin-bottom: 10px;
+}

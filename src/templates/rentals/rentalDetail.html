@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'rentals/rentalDetail.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p id="name">Name: {{renter_info.full_name}}</p>
+        <p id="inputDate">Input Date: {{rental_info.input_date}}</p>
+        {% if renter_info.gender %}
+            <p id="gender">Gender: Male</p>
+        {% else %}
+            <p id="gender">Gender: Female</p>
+        {% endif %}
+        <p id="age">Age: {{renter_info.age}}</p>
+        <p id="height">Height: {{rental_info.height_feet}}'{{rental_info.height_inches}}"</p>
+        <p id="weight">Weight: {{rental_info.weight}} Lbs</p>
+        {% if rental_info.using %}
+            <p>Skier Type: {{rental_info.ski_type}}</p>
+        {% else %}
+            {% if rental_info.stance %}
+                <p>Stance: Regular</p>
+            {% else %}
+                <p>Stance: Goofy</p>
+            {% endif %}
+        {% endif %}
+    </main>
+</body>
+</html>

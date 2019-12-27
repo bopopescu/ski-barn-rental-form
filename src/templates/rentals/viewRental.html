@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'rentals/viewRental.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>Rentals for {{renter_info.full_name}}</p>
+        {% if rental_info %}
+            {%for rental in rental_info %}
+            <a href="{{rental.rental_id}}/"><div class="rental">
+                <p>{{rental.input_date}}</p>
+            </div></a>
+            {%endfor%}
+        {%endif%}
+    </main>
+</body>
+</html>

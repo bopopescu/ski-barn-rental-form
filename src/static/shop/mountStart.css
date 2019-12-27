@@ -1,0 +1,17 @@
+main{
+height: 70%;
+}
+#title{
+    margin-bottom: 15px;
+    text-align: center;
+}
+h1,h2{
+    margin: 10px;
+}
+#options{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: auto;
+}

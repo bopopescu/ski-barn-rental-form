@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'passReset/reset.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Reset password</h1>
+        <div>
+            <p id="passErr">Error! Your passwords didn't seem to match!</p>
+            <p id="noPassErr">Error! Please enter a password.</p>
+            <p id="noEmailErr">Error! Please enter a valid email.</p>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="passwordConf" placeholder="Password Confirmation" required>
+            <button type="submit" onclick="submit()">Submit</button>
+</div>
+        <form method="POST" style="display: none;" id="form">
+            {% csrf_token %}
+            {{form}}
+        </form>
+    </main>
+    <script src="{% static 'passReset/reset.js'%}"></script>
+</body>
+</html>

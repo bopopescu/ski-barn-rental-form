@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'home/home.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <a href="/rentals/logout/" id="logout">Logout</a>
+        <div id="selector">
+            <a href="accountInfo/"><div id="accountInfo">
+                <h1>1. Account Information</h1>
+                <p>View and edit your account's information, like your address, phone number, and the location you will be renting with us at.</p>
+            </div></a>
+            <a href="startService/"><div id="startServ">
+                <h1>2. Start a Service Ticket</h1>
+                <p>Create a new service ticket based on the shop service you need.</p>
+            </div></a>
+            <a href="viewService/"><div id="viewServ">
+                    <h1>3. View a Service Ticket</h1>
+                    <p>View your old tickets and check on the progress of your equipment.</p>
+            </div></a>
+        </div>
+    </main>
+</body>
+</html>

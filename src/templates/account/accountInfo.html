@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'accountInfo/accInf.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Account Information</h1>
+        <a href="change/"><p id="change">Change Information</p></a>
+        <div id="info">
+            <p>Address:</p><p>{{ acc_info.address }}</p>
+            <p>City:</p><p>{{ acc_info.city }}</p>
+            <p>State:</p><p>{{ acc_info.state }}</p>
+            <p>Zip Code:</p><p>{{ acc_info.zipCode }}</p>
+            <p>Location:</p><p>{{ acc_info.location }}</p>
+            <p>Phone:</p><p>{{ acc_info.phone }}</p>
+        </div>
+    </main>
+</body>
+<script src="{% static 'accountInfo/accInf.js'%}"></script>
+<script type="text/javascript"> 
+    var a = "{{account_id}}";
+    document.getElementById('id_user').value = a;
+ </script>
+</html>

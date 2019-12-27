@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Print Preview</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'rentals/print.css'%}">
+</head>
+<body>
+    <p id="rentalIdTop">{{rental.rental_id}}</p>
+    <div id="name">
+    <p id="firstName" class="main">First: {{renter.first_name}}</p>
+    <p id="lastName" class="main">Last: {{renter.last_name}}</p>
+    </div>
+    <p id="address">Address: {{userInfo.address}}</p>
+    <div id="location">
+        <p id="city">City: {{userInfo.city}}</p>
+        <p id="state">State: {{userInfo.state}}</p>
+        <p id="zip">Zip: {{userInfo.zipCode}}</p>
+    </div>
+    <p id="phone">Phone: {{userInfo.phone}}</p>
+    <p id="email">Email: {{user.email}}</p>
+    
+    <div id="type">
+            {% if rental.using %}
+                <p>Skier Type: {{rental.ski_type}}</p>
+            {% else %}
+                {% if rental.stance %}
+                    <p>Stance: Regular</p>
+                {% else %}
+                    <p>Stance: Goofy</p>
+                {% endif %}
+            {% endif %}
+            <p id="weight">Weight: {{rental.weight}} Lbs</p>
+    </div>
+    <div id="gender">
+        {% if renter_info.gender %}
+            <p id="gender">Gender: Male</p>
+        {% else %}
+            <p id="gender">Gender: Female</p>
+        {% endif %}
+        <p id="age">Age: {{renter.age}}</p>
+        <p id="height">Height: {{rental.height_feet}}'{{rental.height_inches}}"</p>
+    </div>
+    <div id="leftTag">
+        <p class="rentalIdBot">{{rental.rental_id}}</p>
+        <p class="NameBot">{{renter.first_name}} {{renter.last_name}}</p>
+    </div>
+    <div id="rightTag">
+            <p class="rentalIdBot">{{rental.rental_id}}</p>
+            <p class="NameBot">{{renter.first_name}} {{renter.last_name}}</p>
+    </div>
+</body>
+</html>

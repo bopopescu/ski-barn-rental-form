@@ -1,0 +1,17 @@
+2. make css for site.
+    2.1 index
+    2.2 login page
+    2.3 signup page
+4. add small features
+    4.1 add ability to delete renters?
+5. get feedback
+6. make sure form prints right
+
+finished:
+1. Fix search for admin pages
+3. find and squash bugs
+    3.1 fix signup, login error handling
+    3.2 check all forms and other items for error handling scenarios
+    3.3 fix multiple rental entries for the same user on the same date (should return 2 entries if required), prompt?
+    3.4 fix index page anchor tags. not able to click on cpu and mobile
+    4.2 add ft height in rental form

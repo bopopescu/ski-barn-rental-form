@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'renters/home.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="renterInfo">
+            <h1>Renter Information</h1>
+            {% if acc_info %}
+                {%for renter in acc_info %}
+                    <a href="{{renter.renter_id}}/" class="renter"><div>
+                        <p>Name: {{ renter.first_name }} {{ renter.last_name }}</p>
+                        <p>Gender:
+                        {% if renter.gender %}
+                            Male
+                        {% else %}
+                            Female
+                        {% endif %}</p>
+                        <p>Date of Birth: {{ renter.Dob }}</p>
+                    </div></a>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="renter" id="addRenter">
+            <h1>Add a Renter...</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script>document.getElementById('id_Dob').type = 'date'</script>
+</body>
+</html>

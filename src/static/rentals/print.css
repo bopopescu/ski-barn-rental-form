@@ -1,0 +1,41 @@
+body{
+    width: 500px;
+    margin: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+}
+#rentalIdTop{
+    margin: 5px;
+    margin-bottom: 69.92px;
+}
+div{
+    display: flex;
+    flex-direction: row;
+}
+p{
+    margin: 2px;
+}
+div > p{
+    margin: 2px auto 2px 0;
+}
+#gender{
+    height: 25px;
+    margin-bottom: 613.986px;
+}
+#leftTag{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+}
+#rightTag{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+#rightTag,#leftTag{
+    text-align: center;
+}

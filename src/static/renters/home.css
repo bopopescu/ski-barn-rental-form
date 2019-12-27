@@ -1,0 +1,22 @@
+#renterInfo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#renterInfo > h1 {
+    grid-column: 1/4;
+    text-align: center;
+}
+.renter{
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+}
+#renterInfo > .renter{
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 2px;
+}
+#id_user, label[for=id_user]{
+    position: absolute;
+    visibility: hidden;
+}

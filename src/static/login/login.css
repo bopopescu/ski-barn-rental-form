@@ -1,0 +1,21 @@
+#form{
+    position: relative;
+    height: 5vh;
+    text-align: center;
+}
+main{
+    overflow: hidden;
+}
+main > h1{
+    text-align: center;
+    margin: 20px auto;
+}
+.errorlist{
+    display: none;
+}
+#error{
+    margin-bottom: 5px;
+}
+#reset{
+    margin-bottom: 5vh;
+}

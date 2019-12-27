@@ -1,0 +1,16 @@
+*{
+    text-align: center;
+}
+p{
+    margin-top: 10px;
+    font-size: large;
+}
+div > p{
+    font-size: medium;
+}
+.rental{
+    margin: 10px auto;
+}
+.rental:hover{
+    text-decoration: underline;
+}

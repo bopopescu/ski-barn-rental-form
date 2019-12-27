@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'accountInfo/accInf.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Change Account Information</h1>        
+        <div id="secondaryInfo">
+            <p>Enter your address and a phone number we can contact you on.</p>
+            <p>This information can be changed later.</p>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="city" placeholder="City" required> 
+            <select name="state" id="state" required>
+                <option value="al">Alabama</option>
+                <option value="ak">Alaska</option> 
+                <option value="az">Arizona</option>
+                <option value="ar">Arkansas</option>
+                <option value="ca">California</option>
+                <option value="co">Colorado</option>
+                <option value="ct">Connecticut</option>
+                <option value="de">Delaware</option>
+                <option value="fl">Florida</option>
+                <option value="ga">Georgia</option>
+                <option value="hi">Hawaii</option>
+                <option value="id">Idaho</option>
+                <option value="il">Illinois</option>
+                <option value="in">Indiana</option>
+                <option value="ia">Iowa</option>
+                <option value="ks">Kansas</option>
+                <option value="ky">Kentucky</option>
+                <option value="la">Louisiana</option>
+                <option value="me">Maine</option>
+                <option value="md">Maryland</option>
+                <option value="ma">Massachusetts</option>
+                <option value="mi">Michigan</option>
+                <option value="mn">Minnesota</option>
+                <option value="ms">Mississippi</option>
+                <option value="mo">Missouri</option>
+                <option value="mt">Montana</option>
+                <option value="ne">Nebraska</option>
+                <option value="nv">Nevada</option>
+                <option value="nh">New Hampshire</option>
+                <option value="nj" selected="">New Jersey</option>
+                <option value="nm">New Mexico</option>
+                <option value="ny">New York</option>
+                <option value="nc">North Carolina</option>
+                <option value="nd">North Dakota</option>
+                <option value="oh">Ohio</option>
+                <option value="ok">Oklahoma</option>
+                <option value="or">Oregon</option>
+                <option value="pa">Pennsylvania</option>
+                <option value="ri">Rhode Island</option>
+                <option value="sc">South Carolina</option>
+                <option value="sd">South Dakota</option>
+                <option value="tn">Tennessee</option>
+                <option value="tx">Texas</option>
+                <option value="ut">Utah</option>
+                <option value="vt">Vermont</option>
+                <option value="va">Virginia</option>
+                <option value="wa">Washington</option>
+                <option value="wv">West Virginia</option>
+                <option value="wi">Wisconsin</option>
+                <option value="wy">Wyoming</option>
+            </select>
+            <input type="text" id="zipCode" placeholder="Zip Code" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <button id="nextSlide" onclick="next()">Next</button>
+        </div>
+        <div id="locations" class="slides">
+            <h2>Location</h2>
+            <p>Select the location you would like to rent with us at.</p>
+            <a href="https://winter.skibarn.com/contact/" target="_blank" id="storeHrs">Store Hours</a>
+            <div id="locs">
+                <div id="paramus" onclick="submit('1')">
+                    <h2>Paramus</h2>
+                    <p>846 Route 17 North, Paramus, Nj, 07652, USA</p>
+                </div>
+                <div id="wayne" onclick="submit('2')">
+                    <h2>Wayne</h2>
+                    <p>1308 Route 23 North, Wayne, NJ 07470, USA</p>
+                </div>
+                <div id="lawrenceville" onclick="submit('3')">
+                    <h2>Lawrenceville</h2>
+                    <p>2990 Brunswick Pike, Route 1 North, Lawrenceville, NJ 08648, USA</p>
+                </div>
+                <div id="shrewsbury" onclick="submit('4')">
+                    <h2>Shrewsbury</h2>
+                    <p>795 Broad Street, Shrewsbury, NJ 07702, USA</p>
+                </div>
+            </div>
+        </div>
+        <form method="POST" id="form">
+            {% csrf_token %}
+            {{ form }}
+        </form>
+    </main>
+</body>
+<script src="{% static 'accountInfo/accInf.js'%}"></script>
+<script type="text/javascript"> 
+    var a = "{{account_id}}";
+    document.getElementById('id_user').value = a;
+ </script>
+</html>

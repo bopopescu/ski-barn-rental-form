@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'home/home.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <a href="/rentals/logout/" id="logout">Logout</a>
+        <div id="selector">
+            <a href="accountInfo/"><div id="accountInfo">
+                <h1>1. Account Information</h1>
+                <p>View and edit your account's information, like your address, phone number, and the location you will be renting with us at.</p>
+            </div></a>
+            <a href="renters/"><div id="manageRenters">
+                <h1>2. Manage Renters</h1>
+                <p>View and edit Information specific to each renter, like name, and date of birth. This is meant to represent each member of your family you plan to rent for. This doesnt need to be edited unless you are starting a rental for someone who has not been inserted into this site already.</p>
+            </div></a>
+            <a href="renters/rentals/"><div id="manageRentals">
+                <h1>3. Start Rentals</h1>
+                <p>Create a rental form for this season for each person registered as a renter to this account.</p>
+            </div></a>
+        </div>
+    </main>
+</body>
+</html>

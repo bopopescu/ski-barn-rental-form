@@ -1,0 +1,40 @@
+main{
+    width: 100%;
+    text-align: center;
+}
+.slides{
+    width: 100%;
+    position: absolute;
+    bottom: 10vh;
+    height: 54vh;
+    display: grid;
+    align-items: center;
+}
+#coreInfo{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+}
+#accountInfo > div > p{
+    grid-column: 1/4;
+    margin-bottom: 10px;
+}
+input, select{
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    padding: 5px;
+}
+#form, #passErr, #noPassErr, #noEmailErr{
+    display: none;
+}
+#nextSlide{
+    width: 20%;
+    margin: auto;
+    border-radius: 20px;
+    border: none;
+}
+#nextSlide:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index/main.css'%}">
+    <link rel="stylesheet" href="{% static 'shop/startservice.css'%}">
+</head>
+<body>
+    <header>
+        {% load static %}
+        <div id="banner">
+            <a href="https://skibarn.com/" id="logo"><img src="{% static 'index/logo.png'%}" alt="Ski Barn"></a>
+            <div id="slogan">
+                <h2>Live Life Outside</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="selector">
+            <a href="mount/"><div id="accountInfo">
+                <h1>Click here to Mount Equipment</h1>
+                <p>Adjust or mount bindings to snowboards and skis.</p>
+            </div></a>
+            <a href="service/"><div id="accountInfo">
+                <h1>Click here to Service Equipment</h1>
+                <p>Maintain and repair your equipment here.</p>
+            </div></a>
+        </div>
+    </main>
+</body>
+</html>
